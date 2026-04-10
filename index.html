@@ -3,1069 +3,741 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium Dental Clinic - Your Perfect Smile Starts Here. Expert dental care with state-of-the-art facilities.">
-    <meta name="keywords" content="dentist, dental clinic, teeth whitening, braces, implants, cosmetic dentistry">
-    <meta name="author" content="Premium Dental Clinic">
-    
-    <title>Premium Dental Clinic | Your Perfect Smile Starts Here</title>
-    
+    <title>Premium Dental Clinic | Your Perfect Smile</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Loader -->
     <div class="loader" id="loader">
-        <div class="loader-content">
-            <div class="loader-logo">
-                <svg viewBox="0 0 100 100" fill="none">
-                    <circle cx="50" cy="50" r="45" stroke="#00C9A7" stroke-width="3" stroke-dasharray="283" stroke-dashoffset="283" id="loader-circle">
-                        <animate attributeName="stroke-dashoffset" values="283;0" dur="1.5s" fill="freeze" />
-                    </circle>
-                    <path d="M35 50 L45 60 L65 40" stroke="#00C9A7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="50" stroke-dashoffset="50" id="loader-check">
-                        <animate attributeName="stroke-dashoffset" values="50;0" dur="0.5s" begin="1.2s" fill="freeze" />
-                    </path>
-                </svg>
-            </div>
-            <p class="loader-text">LOADING MAGIC...</p>
+        <div class="loader-tooth">
+            <i class="fas fa-tooth"></i>
         </div>
+        <div class="loader-ring"></div>
     </div>
 
-    <!-- Custom Cursor -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursor-follower"></div>
-
-    <!-- Particle Canvas -->
-    <canvas id="particles"></canvas>
-
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav">
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
             <a href="#" class="nav-logo">
                 <div class="logo-icon">
-                    <svg viewBox="0 0 50 50" fill="none">
-                        <path d="M25 5C15 5 8 15 8 25C8 35 15 45 25 45C35 45 42 35 42 25C42 15 35 5 25 5Z" fill="#E8F4FD"/>
-                        <path d="M25 10C17 10 12 18 12 25C12 32 17 40 25 40C33 40 38 32 38 25C38 18 33 10 25 10Z" fill="#00C9A7"/>
-                        <path d="M25 15C20 15 17 20 17 25C17 30 20 35 25 35C30 35 33 30 33 25C33 20 30 15 25 15Z" fill="#0A2540"/>
-                        <circle cx="25" cy="25" r="3" fill="#FFFFFF"/>
-                    </svg>
+                    <i class="fas fa-tooth"></i>
                 </div>
                 <div class="logo-text">
-                    <span class="logo-name">Premium Dental</span>
-                    <span class="logo-sub">Excellence in Care</span>
+                    <span class="logo-name">DentaLux</span>
+                    <span class="logo-tagline">Premium Dental Care</span>
                 </div>
             </a>
-
-            <div class="nav-center">
-                <ul class="nav-links">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#team" class="nav-link">Team</a></li>
-                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="nav-right">
-                <a href="tel:+919999999999" class="nav-phone">
-                    <span class="phone-icon"><i class="fas fa-phone"></i></span>
-                    <span>Book Now</span>
-                </a>
-                <a href="#booking" class="nav-cta">Appointment</a>
-            </div>
-
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#doctors" class="nav-link">Doctors</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="#booking" class="nav-btn">
+                <i class="fas fa-calendar-check"></i>
+                Book Now
+            </a>
+            <button class="mobile-toggle" id="mobileToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <ul class="mobile-links">
-            <li><a href="#home" class="mobile-link">Home</a></li>
-            <li><a href="#about" class="mobile-link">About</a></li>
-            <li><a href="#services" class="mobile-link">Services</a></li>
-            <li><a href="#team" class="mobile-link">Team</a></li>
-            <li><a href="#gallery" class="mobile-link">Gallery</a></li>
-            <li><a href="#contact" class="mobile-link">Contact</a></li>
-            <li><a href="#booking" class="mobile-link cta">Book Appointment</a></li>
-        </ul>
-    </div>
-
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-bg">
-            <div class="hero-gradient"></div>
-            <div class="hero-pattern"></div>
+            <div class="hero-blob blob-1"></div>
+            <div class="hero-blob blob-2"></div>
+            <div class="hero-blob blob-3"></div>
+            <div class="grid-pattern"></div>
         </div>
-        
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    <span>Trusted by 50,000+ Patients</span>
-                </div>
-                
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">
+                    <span class="badge-pulse"></span>
+                    #1 Rated Dental Clinic
+                </span>
                 <h1 class="hero-title">
-                    <span class="title-small">Your Perfect Smile</span>
-                    <span class="title-large">Starts Here</span>
+                    <span class="line">Your Perfect</span>
+                    <span class="line gradient-text">Smile Starts</span>
+                    <span class="line">Here Today</span>
                 </h1>
-                
                 <p class="hero-desc">
-                    Experience world-class dental care with cutting-edge technology and compassionate experts who put your comfort first.
+                    Experience world-class dental care with cutting-edge technology, compassionate experts, and treatments that transform your smile forever.
                 </p>
-                
                 <div class="hero-stats">
-                    <div class="hero-stat">
-                        <span class="stat-number" data-count="25">0</span>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="15">0</span>
                         <span class="stat-plus">+</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
-                    <div class="hero-stat">
-                        <span class="stat-number" data-count="50">0</span>
-                        <span class="stat-plus">K</span>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="25000">0</span>
+                        <span class="stat-plus">+</span>
                         <span class="stat-label">Happy Smiles</span>
                     </div>
-                    <div class="hero-stat">
-                        <span class="stat-number" data-count="15">0</span>
-                        <span class="stat-plus">+</span>
-                        <span class="stat-label">Expert Dentists</span>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="98">0</span>
+                        <span class="stat-plus">%</span>
+                        <span class="stat-label">Satisfaction</span>
                     </div>
                 </div>
-                
-                <div class="hero-actions">
-                    <a href="#booking" class="btn btn-primary pulse-glow">
+                <div class="hero-btns">
+                    <a href="#booking" class="btn-primary-gradient">
                         <span>Book Appointment</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#services" class="btn btn-outline">
-                        <i class="fas fa-play-circle"></i>
-                        <span>Our Services</span>
+                    <a href="#services" class="btn-outline-gradient">
+                        <i class="fas fa-play"></i>
+                        <span>Watch Video</span>
                     </a>
                 </div>
-                
-                <div class="hero-trust">
-                    <div class="trust-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>ISO Certified</span>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fas fa-award"></i>
-                        <span>Award Winning</span>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fas fa-star"></i>
-                        <span>4.9 Rating</span>
-                    </div>
-                </div>
             </div>
-            
             <div class="hero-visual">
-                <div class="hero-image">
-                    <div class="hero-avatar">
-                        <svg viewBox="0 0 400 400" fill="none">
-                            <circle cx="200" cy="200" r="180" fill="#E8F4FD"/>
-                            <circle cx="200" cy="200" r="150" fill="#00C9A7" opacity="0.2"/>
-                            <circle cx="200" cy="200" r="100" fill="#00C9A7" opacity="0.4"/>
-                            <g transform="translate(140, 130)">
-                                <ellipse cx="60" cy="70" rx="55" ry="65" fill="#E8F4FD"/>
-                                <ellipse cx="60" cy="70" rx="45" ry="55" fill="#FFFFFF"/>
-                                <circle cx="45" cy="55" r="8" fill="#0A2540"/>
-                                <circle cx="75" cy="55" r="8" fill="#0A2540"/>
-                                <circle cx="47" cy="53" r="2" fill="#FFFFFF"/>
-                                <circle cx="77" cy="53" r="2" fill="#FFFFFF"/>
-                                <path d="M45 80 Q60 95 75 80" stroke="#0A2540" stroke-width="3" fill="none" stroke-linecap="round"/>
-                                <path d="M30 40 Q60 20 90 40" stroke="#0A2540" stroke-width="8" fill="none" stroke-linecap="round"/>
-                            </g>
-                            <g transform="translate(280, 280)">
-                                <rect x="0" y="0" width="60" height="60" rx="15" fill="#FFFFFF" opacity="0.9"/>
-                                <path d="M15 35 L25 45 L45 25" stroke="#00C9A7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                            </g>
-                            <g transform="translate(60, 280)">
-                                <rect x="0" y="0" width="50" height="50" rx="12" fill="#FFFFFF" opacity="0.9"/>
-                                <path d="M15 25 L25 35 L35 15" stroke="#0A2540" stroke-width="3" stroke-linecap="round" fill="none"/>
-                                <path d="M15 32 L25 42 L35 22" stroke="#0A2540" stroke-width="3" stroke-linecap="round" fill="none"/>
-                            </g>
+                <div class="hero-image-container">
+                    <div class="hero-circle"></div>
+                    <div class="hero-smile">
+                        <svg viewBox="0 0 300 200" fill="none">
+                            <circle cx="150" cy="100" r="90" fill="white" opacity="0.15"/>
+                            <path d="M60 90 Q150 180 240 90" stroke="white" stroke-width="8" stroke-linecap="round" fill="none"/>
+                            <circle cx="90" cy="75" r="15" fill="white" opacity="0.9"/>
+                            <circle cx="210" cy="75" r="15" fill="white" opacity="0.9"/>
                         </svg>
                     </div>
-                    <div class="hero-glow"></div>
-                </div>
-                
-                <div class="hero-card card-1">
-                    <div class="card-icon">
-                        <i class="fas fa-calendar-check"></i>
+                    <div class="floating-card card-1">
+                        <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="card-info">
+                            <strong>100% Safe</strong>
+                            <span>Sterilized Tools</span>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <strong>Easy Booking</strong>
-                        <span>Online scheduling 24/7</span>
+                    <div class="floating-card card-2">
+                        <div class="card-icon"><i class="fas fa-star"></i></div>
+                        <div class="card-info">
+                            <strong>4.9 Rating</strong>
+                            <span>5000+ Reviews</span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="hero-card card-2">
-                    <div class="card-icon green">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <div class="card-content">
-                        <strong>Painless Treatment</strong>
-                        <span>Advanced technology</span>
+                    <div class="floating-card card-3">
+                        <div class="card-icon"><i class="fas fa-clock"></i></div>
+                        <div class="card-info">
+                            <strong>24/7 Support</strong>
+                            <span>Always Available</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="hero-scroll">
-            <div class="scroll-mouse">
-                <div class="scroll-wheel"></div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
             </div>
-            <span>Scroll Down</span>
+            <span>Scroll to explore</span>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-images">
-                    <div class="about-main">
-                        <svg viewBox="0 0 500 400" fill="none">
-                            <rect width="500" height="400" rx="30" fill="#E8F4FD"/>
-                            <rect x="30" y="30" width="440" height="340" rx="20" fill="#FFFFFF"/>
-                            <g transform="translate(150, 80)">
-                                <rect width="200" height="240" rx="20" fill="#00C9A7" opacity="0.2"/>
-                                <rect x="20" y="20" width="160" height="200" rx="15" fill="#FFFFFF"/>
-                                <circle cx="100" cy="90" r="50" fill="#E8F4FD"/>
-                                <circle cx="100" cy="90" r="35" fill="#00C9A7" opacity="0.3"/>
-                                <rect x="60" y="160" width="80" height="12" rx="6" fill="#0A2540" opacity="0.2"/>
-                                <rect x="70" y="180" width="60" height="8" rx="4" fill="#0A2540" opacity="0.1"/>
-                            </g>
-                            <g transform="translate(350, 250)">
-                                <circle cx="50" cy="50" r="60" fill="#FFFFFF" opacity="0.9"/>
-                                <circle cx="50" cy="50" r="40" fill="#0A2540"/>
-                                <text x="50" y="45" text-anchor="middle" fill="#FFFFFF" font-family="Poppins" font-size="14" font-weight="bold">25+</text>
-                                <text x="50" y="62" text-anchor="middle" fill="#FFFFFF" font-family="Inter" font-size="8">Years</text>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="about-exp">
-                        <div class="exp-circle">
-                            <span class="exp-number">25</span>
-                            <span class="exp-text">Years<br>Experience</span>
-                        </div>
-                    </div>
-                    <div class="about-award">
-                        <i class="fas fa-award"></i>
-                        <span>Award Winning Clinic</span>
-                    </div>
-                </div>
-                
-                <div class="about-content">
-                    <div class="section-label">
-                        <span class="label-line"></span>
-                        <span class="label-text">About Us</span>
-                    </div>
-                    
-                    <h2 class="section-title">
-                        Where Innovation Meets <span class="highlight">Compassionate Care</span>
-                    </h2>
-                    
-                    <p class="about-lead">
-                        We believe everyone deserves a healthy, beautiful smile. Our state-of-the-art facility combines the latest dental technology with a warm, welcoming environment.
-                    </p>
-                    
-                    <p class="about-desc">
-                        Founded in 1999, Premium Dental Clinic has been transforming smiles for over two decades. Our team of specialists uses cutting-edge techniques to deliver exceptional results with minimal discomfort.
-                    </p>
-                    
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Board Certified Dentists</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Latest Technology</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Painless Procedures</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Flexible Payment Plans</span>
-                        </div>
-                    </div>
-                    
-                    <a href="#team" class="btn btn-primary">
-                        <span>Meet Our Team</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
     <section class="services" id="services">
-        <div class="container">
-            <div class="services-header">
-                <div class="section-label center">
-                    <span class="label-line"></span>
-                    <span class="label-text">Our Services</span>
-                    <span class="label-line"></span>
+        <div class="section-header">
+            <span class="section-tag">Our Services</span>
+            <h2 class="section-title">Comprehensive <span class="gradient-text">Dental Care</span></h2>
+            <p class="section-subtitle">From routine check-ups to complete smile makeovers, we offer everything your smile needs.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-tilt>
+                <div class="service-icon">
+                    <i class="fas fa-sparkles"></i>
                 </div>
-                <h2 class="section-title center">
-                    Comprehensive <span class="highlight">Dental Solutions</span>
-                </h2>
-                <p class="services-desc">
-                    From routine check-ups to complete smile makeovers, we offer a full range of dental services tailored to your needs.
+                <span class="service-number">01</span>
+                <h3>Teeth Whitening</h3>
+                <p>Professional whitening that brightens your smile up to 8 shades in just one visit.</p>
+                <div class="service-hover-effect"></div>
+            </div>
+            <div class="service-card featured" data-tilt>
+                <div class="service-badge">Most Popular</div>
+                <div class="service-icon">
+                    <i class="fas fa-magic"></i>
+                </div>
+                <span class="service-number">02</span>
+                <h3>Invisalign & Braces</h3>
+                <p>Invisible aligners and modern braces for a straighter, healthier smile discreetly.</p>
+                <div class="service-hover-effect"></div>
+            </div>
+            <div class="service-card" data-tilt>
+                <div class="service-icon">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <span class="service-number">03</span>
+                <h3>Dental Implants</h3>
+                <p>Permanent tooth replacement that looks, feels, and functions like natural teeth.</p>
+                <div class="service-hover-effect"></div>
+            </div>
+            <div class="service-card" data-tilt>
+                <div class="service-icon">
+                    <i class="fas fa-x-ray"></i>
+                </div>
+                <span class="service-number">04</span>
+                <h3>Root Canal</h3>
+                <p>Painless root canal therapy using advanced rotary systems for precise treatment.</p>
+                <div class="service-hover-effect"></div>
+            </div>
+            <div class="service-card" data-tilt>
+                <div class="service-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <span class="service-number">05</span>
+                <h3>Crowns & Veneers</h3>
+                <p>Custom-crafted porcelain restorations for a natural, beautiful appearance.</p>
+                <div class="service-hover-effect"></div>
+            </div>
+            <div class="service-card" data-tilt>
+                <div class="service-icon">
+                    <i class="fas fa-child"></i>
+                </div>
+                <span class="service-number">06</span>
+                <h3>Pediatric Dentistry</h3>
+                <p>Gentle, fun dental care designed specifically for children in a stress-free environment.</p>
+                <div class="service-hover-effect"></div>
+            </div>
+            <div class="service-card" data-tilt>
+                <div class="service-icon">
+                    <i class="fas fa-laser"></i>
+                </div>
+                <span class="service-number">07</span>
+                <h3>Laser Dentistry</h3>
+                <p>State-of-the-art laser treatments for minimally invasive, comfortable procedures.</p>
+                <div class="service-hover-effect"></div>
+            </div>
+            <div class="service-card" data-tilt>
+                <div class="service-icon">
+                    <i class="fas fa-ambulance"></i>
+                </div>
+                <span class="service-number">08</span>
+                <h3>Emergency Care</h3>
+                <p>Same-day emergency appointments. We're here when you need us most, day or night.</p>
+                <div class="service-hover-effect"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-images">
+                <div class="about-main-img">
+                    <svg viewBox="0 0 400 500" fill="none">
+                        <rect width="400" height="500" rx="30" fill="#f0f9ff"/>
+                        <rect x="20" y="20" width="360" height="460" rx="20" fill="white"/>
+                        <circle cx="200" cy="180" r="100" fill="#00d4aa" opacity="0.2"/>
+                        <rect x="120" y="320" width="160" height="120" rx="15" fill="#0a2540" opacity="0.1"/>
+                    </svg>
+                </div>
+                <div class="about-exp-badge">
+                    <div class="exp-inner">
+                        <span class="exp-number">15</span>
+                        <span class="exp-text">Years of<br>Excellence</span>
+                    </div>
+                </div>
+                <div class="about-award">
+                    <i class="fas fa-award"></i>
+                    <span>Award Winning Clinic</span>
+                </div>
+            </div>
+            <div class="about-content">
+                <span class="section-tag">About Us</span>
+                <h2 class="section-title">Where Innovation Meets <span class="gradient-text">Compassionate Care</span></h2>
+                <p class="about-lead">
+                    We believe everyone deserves a healthy, beautiful smile. Our state-of-the-art facility combines the latest dental technology with a warm, welcoming environment.
                 </p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card" data-tilt>
-                    <div class="service-icon">
-                        <i class="fas fa-teeth"></i>
+                <p class="about-desc">
+                    Founded in 2010, DentaLux has transformed over 25,000 smiles. Our team of board-certified specialists uses cutting-edge techniques to deliver exceptional results with minimal discomfort.
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-check"></i></div>
+                        <span>Board Certified Dentists</span>
                     </div>
-                    <span class="service-badge">Popular</span>
-                    <h3>Teeth Whitening</h3>
-                    <p>Professional whitening treatments that brighten your smile up to 8 shades in just one visit.</p>
-                    <a href="#booking" class="service-link">
-                        <span>Book Now</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="service-card" data-tilt>
-                    <div class="service-icon">
-                        <i class="fas fa-magic"></i>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-check"></i></div>
+                        <span>Latest Technology</span>
                     </div>
-                    <h3>Braces & Aligners</h3>
-                    <p>Invisible aligners and modern braces for a straighter, healthier smile without the hassle.</p>
-                    <a href="#booking" class="service-link">
-                        <span>Book Now</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="service-card featured" data-tilt>
-                    <div class="service-icon">
-                        <i class="fas fa-tooth"></i>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-check"></i></div>
+                        <span>Painless Procedures</span>
                     </div>
-                    <h3>Dental Implants</h3>
-                    <p>Permanent tooth replacement that looks, feels, and functions just like your natural teeth.</p>
-                    <a href="#booking" class="service-link">
-                        <span>Book Now</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="service-card" data-tilt>
-                    <div class="service-icon">
-                        <i class="fas fa-x-ray"></i>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-check"></i></div>
+                        <span>Flexible Payments</span>
                     </div>
-                    <h3>Root Canal</h3>
-                    <p>Painless root canal therapy using advanced rotary systems for precise, comfortable treatment.</p>
-                    <a href="#booking" class="service-link">
-                        <span>Book Now</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="service-card" data-tilt>
-                    <div class="service-icon">
-                        <i class="fas fa-crown"></i>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-check"></i></div>
+                        <span>Insurance Accepted</span>
                     </div>
-                    <h3>Crowns & Bridges</h3>
-                    <p>Custom-crafted porcelain restorations that restore strength and beauty to damaged teeth.</p>
-                    <a href="#booking" class="service-link">
-                        <span>Book Now</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="service-card" data-tilt>
-                    <div class="service-icon">
-                        <i class="fas fa-child"></i>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-check"></i></div>
+                        <span>Free Consultations</span>
                     </div>
-                    <h3>Pediatric Dentistry</h3>
-                    <p>Gentle, fun dental care designed specifically for children in a stress-free environment.</p>
-                    <a href="#booking" class="service-link">
-                        <span>Book Now</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
                 </div>
-                
-                <div class="service-card" data-tilt>
-                    <div class="service-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <h3>Cosmetic Dentistry</h3>
-                    <p>Veneers, bonding, and contouring to transform your smile into a masterpiece.</p>
-                    <a href="#booking" class="service-link">
-                        <span>Book Now</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="service-card" data-tilt>
-                    <div class="service-icon">
-                        <i class="fas fa-ambulance"></i>
-                    </div>
-                    <h3>Emergency Care</h3>
-                    <p>Same-day emergency appointments available. We're here when you need us most.</p>
-                    <a href="#booking" class="service-link">
-                        <span>Book Now</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
+                <a href="#contact" class="btn-primary-gradient">
+                    <span>Learn More</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works" id="how">
-        <div class="container">
-            <div class="section-label center">
-                <span class="label-line"></span>
-                <span class="label-text">How It Works</span>
-                <span class="label-line"></span>
+    <section class="process">
+        <div class="section-header">
+            <span class="section-tag">How It Works</span>
+            <h2 class="section-title">Simple Steps to Your <span class="gradient-text">New Smile</span></h2>
+        </div>
+        <div class="process-timeline">
+            <div class="process-line"></div>
+            <div class="process-step">
+                <div class="step-marker">01</div>
+                <div class="step-icon"><i class="fas fa-calendar-alt"></i></div>
+                <h3>Book Online</h3>
+                <p>Schedule your appointment in under a minute. Choose your preferred date and time.</p>
             </div>
-            <h2 class="section-title center">
-                Your Journey to a <span class="highlight">Beautiful Smile</span>
-            </h2>
-            
-            <div class="steps-container">
-                <div class="step-line"></div>
-                
-                <div class="step">
-                    <div class="step-number">01</div>
-                    <div class="step-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3>Book Appointment</h3>
-                    <p>Schedule online or call us. Same-day availability for emergencies.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">02</div>
-                    <div class="step-icon">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <h3>Consultation</h3>
-                    <p>Meet your dentist for a comprehensive exam and personalized treatment plan.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">03</div>
-                    <div class="step-icon">
-                        <i class="fas fa-tooth"></i>
-                    </div>
-                    <h3>Treatment</h3>
-                    <p>Experience comfortable, modern treatment with our expert team.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">04</div>
-                    <div class="step-icon">
-                        <i class="fas fa-smile-beam"></i>
-                    </div>
-                    <h3>Smile</h3>
-                    <p>Walk out with confidence. We'll guide you on maintaining your new smile.</p>
-                </div>
+            <div class="process-step">
+                <div class="step-marker">02</div>
+                <div class="step-icon"><i class="fas fa-user-md"></i></div>
+                <h3>Meet Your Dentist</h3>
+                <p>Get a comprehensive exam and personalized treatment plan from our experts.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-marker">03</div>
+                <div class="step-icon"><i class="fas fa-tooth"></i></div>
+                <h3>Get Treated</h3>
+                <p>Experience comfortable, modern treatment with our caring team by your side.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-marker">04</div>
+                <div class="step-icon"><i class="fas fa-smile-beam"></i></div>
+                <h3>Smile Bright</h3>
+                <p>Walk out with confidence! We'll guide you on maintaining your new smile.</p>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team" id="team">
-        <div class="container">
-            <div class="team-header">
-                <div class="section-label center">
-                    <span class="label-line"></span>
-                    <span class="label-text">Our Experts</span>
-                    <span class="label-line"></span>
+    <section class="doctors" id="doctors">
+        <div class="section-header">
+            <span class="section-tag">Our Team</span>
+            <h2 class="section-title">Meet Our <span class="gradient-text">Expert Dentists</span></h2>
+            <p class="section-subtitle">Our board-certified specialists are passionate about creating beautiful, healthy smiles.</p>
+        </div>
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <div class="doctor-image">
+                    <svg viewBox="0 0 300 350" fill="none">
+                        <rect width="300" height="350" rx="25" fill="#f0f9ff"/>
+                        <circle cx="150" cy="120" r="70" fill="#00d4aa" opacity="0.2"/>
+                        <rect x="100" y="200" width="100" height="100" rx="15" fill="white"/>
+                    </svg>
+                    <div class="doctor-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
                 </div>
-                <h2 class="section-title center">
-                    Meet Our <span class="highlight">Specialists</span>
-                </h2>
+                <div class="doctor-info">
+                    <h3>Dr. Sarah Mitchell</h3>
+                    <span class="doctor-role">Chief Dentist</span>
+                    <p>DDS, FAGD - 15 years experience in cosmetic and restorative dentistry.</p>
+                    <div class="doctor-tags">
+                        <span>Cosmetic</span>
+                        <span>Restorative</span>
+                    </div>
+                </div>
             </div>
-            
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-card-inner">
-                        <div class="team-card-front">
-                            <div class="team-image">
-                                <svg viewBox="0 0 300 350" fill="none">
-                                    <rect width="300" height="350" rx="25" fill="#E8F4FD"/>
-                                    <circle cx="150" cy="130" r="80" fill="#FFFFFF"/>
-                                    <circle cx="150" cy="130" r="60" fill="#00C9A7" opacity="0.3"/>
-                                    <circle cx="150" cy="120" r="35" fill="#0A2540" opacity="0.1"/>
-                                    <rect x="80" y="220" width="140" height="100" rx="15" fill="#FFFFFF"/>
-                                    <rect x="100" y="235" width="100" height="12" rx="6" fill="#0A2540" opacity="0.2"/>
-                                    <rect x="115" y="260" width="70" height="8" rx="4" fill="#00C9A7"/>
-                                </svg>
-                            </div>
-                            <h3>Dr. Sarah Johnson</h3>
-                            <span class="team-role">Chief Dentist</span>
-                            <span class="team-degree">DDS, FAGD</span>
-                            <span class="badge">15+ Years</span>
-                        </div>
-                        <div class="team-card-back">
-                            <h3>Dr. Sarah Johnson</h3>
-                            <p>Specializes in cosmetic dentistry and smile makeovers with over 15 years of experience.</p>
-                            <div class="team-social">
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                            </div>
-                        </div>
+            <div class="doctor-card featured">
+                <div class="doctor-badge">Lead Orthodontist</div>
+                <div class="doctor-image">
+                    <svg viewBox="0 0 300 350" fill="none">
+                        <rect width="300" height="350" rx="25" fill="#0a2540"/>
+                        <circle cx="150" cy="120" r="70" fill="#00d4aa" opacity="0.3"/>
+                        <rect x="100" y="200" width="100" height="100" rx="15" fill="white" opacity="0.2"/>
+                    </svg>
+                    <div class="doctor-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-                
-                <div class="team-card">
-                    <div class="team-card-inner">
-                        <div class="team-card-front">
-                            <div class="team-image">
-                                <svg viewBox="0 0 300 350" fill="none">
-                                    <rect width="300" height="350" rx="25" fill="#E8F4FD"/>
-                                    <circle cx="150" cy="130" r="80" fill="#FFFFFF"/>
-                                    <circle cx="150" cy="130" r="60" fill="#00C9A7" opacity="0.3"/>
-                                    <circle cx="150" cy="120" r="35" fill="#0A2540" opacity="0.1"/>
-                                    <rect x="80" y="220" width="140" height="100" rx="15" fill="#FFFFFF"/>
-                                    <rect x="100" y="235" width="100" height="12" rx="6" fill="#0A2540" opacity="0.2"/>
-                                    <rect x="115" y="260" width="70" height="8" rx="4" fill="#00C9A7"/>
-                                </svg>
-                            </div>
-                            <h3>Dr. Michael Chen</h3>
-                            <span class="team-role">Orthodontist</span>
-                            <span class="team-degree">DMD, MS Ortho</span>
-                            <span class="badge">12+ Years</span>
-                        </div>
-                        <div class="team-card-back">
-                            <h3>Dr. Michael Chen</h3>
-                            <p>Expert in invisible aligners and braces, creating beautiful smiles for all ages.</p>
-                            <div class="team-social">
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                            </div>
-                        </div>
+                <div class="doctor-info">
+                    <h3>Dr. James Wilson</h3>
+                    <span class="doctor-role">Orthodontist</span>
+                    <p>DMD, MS Ortho - Expert in Invisalign and traditional braces.</p>
+                    <div class="doctor-tags">
+                        <span>Invisalign</span>
+                        <span>Braces</span>
                     </div>
                 </div>
-                
-                <div class="team-card">
-                    <div class="team-card-inner">
-                        <div class="team-card-front">
-                            <div class="team-image">
-                                <svg viewBox="0 0 300 350" fill="none">
-                                    <rect width="300" height="350" rx="25" fill="#E8F4FD"/>
-                                    <circle cx="150" cy="130" r="80" fill="#FFFFFF"/>
-                                    <circle cx="150" cy="130" r="60" fill="#00C9A7" opacity="0.3"/>
-                                    <circle cx="150" cy="120" r="35" fill="#0A2540" opacity="0.1"/>
-                                    <rect x="80" y="220" width="140" height="100" rx="15" fill="#FFFFFF"/>
-                                    <rect x="100" y="235" width="100" height="12" rx="6" fill="#0A2540" opacity="0.2"/>
-                                    <rect x="115" y="260" width="70" height="8" rx="4" fill="#00C9A7"/>
-                                </svg>
-                            </div>
-                            <h3>Dr. Emily Parker</h3>
-                            <span class="team-role">Pediatric Dentist</span>
-                            <span class="team-degree">DDS, MS Pedo</span>
-                            <span class="badge">10+ Years</span>
-                        </div>
-                        <div class="team-card-back">
-                            <h3>Dr. Emily Parker</h3>
-                            <p>Makes dental visits fun for kids! Specializes in gentle, caring treatment for children.</p>
-                            <div class="team-social">
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                            </div>
-                        </div>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-image">
+                    <svg viewBox="0 0 300 350" fill="none">
+                        <rect width="300" height="350" rx="25" fill="#f0f9ff"/>
+                        <circle cx="150" cy="120" r="70" fill="#00d4aa" opacity="0.2"/>
+                        <rect x="100" y="200" width="100" height="100" rx="15" fill="white"/>
+                    </svg>
+                    <div class="doctor-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr. Emily Chen</h3>
+                    <span class="doctor-role">Pediatric Dentist</span>
+                    <p>DDS, MS Pedo - Specialist in gentle dental care for kids.</p>
+                    <div class="doctor-tags">
+                        <span>Children</span>
+                        <span>Preventive</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-label center">
-                <span class="label-line"></span>
-                <span class="label-text">Testimonials</span>
-                <span class="label-line"></span>
-            </div>
-            <h2 class="section-title center">
-                What Our <span class="highlight">Patients Say</span>
-            </h2>
-            
-            <div class="testimonials-wrapper">
-                <div class="testimonials-track" id="testimonialsTrack">
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Absolutely amazing experience! The staff was so friendly and the results exceeded my expectations. My smile has never looked better!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">JD</div>
-                            <div class="author-info">
-                                <strong>Jennifer Davis</strong>
-                                <span>Teeth Whitening</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Dr. Chen created the perfect treatment plan for my braces. The process was comfortable and the results are incredible!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">RM</div>
-                            <div class="author-info">
-                                <strong>Robert Miller</strong>
-                                <span>Invisalign Treatment</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"My kids actually look forward to their dental visits now! Dr. Parker is amazing with children. Best pediatric dentist ever!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">SL</div>
-                            <div class="author-info">
-                                <strong>Sarah Lee</strong>
-                                <span>Pediatric Care</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Got my dental implants here and the quality is outstanding. You can't even tell they're not my real teeth. Highly recommend!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">MW</div>
-                            <div class="author-info">
-                                <strong>Michael Wong</strong>
-                                <span>Dental Implants</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"The clinic is beautiful and the technology is top-notch. Root canal was completely painless! So glad I found this place."</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">AT</div>
-                            <div class="author-info">
-                                <strong>Amanda Taylor</strong>
-                                <span>Root Canal</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonials-controls">
-                <button class="testimonial-btn prev" id="testimonialPrev"><i class="fas fa-chevron-left"></i></button>
-                <button class="testimonial-btn next" id="testimonialNext"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
     <section class="gallery" id="gallery">
-        <div class="container">
-            <div class="section-label center">
-                <span class="label-line"></span>
-                <span class="label-text">Gallery</span>
-                <span class="label-line"></span>
-            </div>
-            <h2 class="section-title center">
-                Our <span class="highlight">Beautiful Smiles</span>
-            </h2>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item large" data-lightbox>
-                    <svg viewBox="0 0 600 400" fill="none">
-                        <rect width="600" height="400" fill="#E8F4FD"/>
-                        <text x="300" y="200" text-anchor="middle" fill="#0A2540" font-family="Poppins" font-size="24" font-weight="600">Before</text>
-                    </svg>
-                    <div class="gallery-overlay">Before Treatment</div>
-                </div>
-                
-                <div class="gallery-item" data-lightbox>
-                    <svg viewBox="0 0 300 200" fill="none">
-                        <rect width="300" height="200" fill="#00C9A7" opacity="0.2"/>
-                        <text x="150" y="110" text-anchor="middle" fill="#00C9A7" font-family="Poppins" font-size="20" font-weight="600">After</text>
-                    </svg>
-                    <div class="gallery-overlay">Teeth Whitening</div>
-                </div>
-                
-                <div class="gallery-item" data-lightbox>
-                    <svg viewBox="0 0 300 200" fill="none">
-                        <rect width="300" height="200" fill="#0A2540" opacity="0.1"/>
-                        <text x="150" y="110" text-anchor="middle" fill="#0A2540" font-family="Poppins" font-size="20" font-weight="600">After</text>
-                    </svg>
-                    <div class="gallery-overlay">Braces Result</div>
-                </div>
-                
-                <div class="gallery-item" data-lightbox>
-                    <svg viewBox="0 0 300 200" fill="none">
-                        <rect width="300" height="200" fill="#E8F4FD"/>
-                        <text x="150" y="110" text-anchor="middle" fill="#00C9A7" font-family="Poppins" font-size="20" font-weight="600">After</text>
-                    </svg>
-                    <div class="gallery-overlay">Smile Makeover</div>
-                </div>
-                
-                <div class="gallery-item" data-lightbox>
-                    <svg viewBox="0 0 300 200" fill="none">
-                        <rect width="300" height="200" fill="#00C9A7" opacity="0.3"/>
-                        <text x="150" y="110" text-anchor="middle" fill="#0A2540" font-family="Poppins" font-size="20" font-weight="600">After</text>
-                    </svg>
-                    <div class="gallery-overlay">Dental Implants</div>
-                </div>
-                
-                <div class="gallery-item large" data-lightbox>
-                    <svg viewBox="0 0 600 200" fill="none">
-                        <rect width="600" height="200" fill="#0A2540" opacity="0.1"/>
-                        <text x="300" y="110" text-anchor="middle" fill="#0A2540" font-family="Poppins" font-size="24" font-weight="600">Our Beautiful Clinic</text>
-                    </svg>
-                    <div class="gallery-overlay">Modern Facilities</div>
-                </div>
-            </div>
+        <div class="section-header">
+            <span class="section-tag">Gallery</span>
+            <h2 class="section-title">Beautiful <span class="gradient-text">Smile Gallery</span></h2>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta" id="cta">
-        <div class="cta-box">
-            <div class="cta-content">
-                <h2>Ready to Transform Your Smile?</h2>
-                <p>Book your consultation today and take the first step towards the smile you've always wanted.</p>
-                <div class="cta-buttons">
-                    <a href="#booking" class="btn btn-white">
-                        <i class="fas fa-calendar-check"></i>
-                        <span>Book Appointment</span>
-                    </a>
-                    <a href="tel:+919999999999" class="btn btn-outline-white">
-                        <i class="fas fa-phone"></i>
-                        <span>Call Us Now</span>
-                    </a>
-                </div>
-            </div>
-            <div class="cta-image">
-                <svg viewBox="0 0 300 300" fill="none">
-                    <circle cx="150" cy="150" r="120" fill="#FFFFFF" opacity="0.1"/>
-                    <circle cx="150" cy="150" r="80" fill="#FFFFFF" opacity="0.15"/>
-                    <path d="M100 150 Q150 80 200 150 Q150 220 100 150Z" fill="#FFFFFF" opacity="0.2"/>
+        <div class="gallery-grid">
+            <div class="gallery-item large">
+                <svg viewBox="0 0 600 400" fill="none">
+                    <rect width="600" height="400" fill="#0a2540"/>
+                    <text x="300" y="200" text-anchor="middle" fill="white" font-family="Poppins" font-size="24">Before & After</text>
                 </svg>
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                    <span>Smile Makeover</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <svg viewBox="0 0 300 300" fill="none">
+                    <rect width="300" height="300" fill="#00d4aa"/>
+                    <text x="150" y="160" text-anchor="middle" fill="white" font-family="Poppins" font-size="18">Whitening</text>
+                </svg>
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                    <span>Teeth Whitening</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <svg viewBox="0 0 300 300" fill="none">
+                    <rect width="300" height="300" fill="#f0f9ff"/>
+                    <text x="150" y="160" text-anchor="middle" fill="#0a2540" font-family="Poppins" font-size="18">Implants</text>
+                </svg>
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                    <span>Dental Implants</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <svg viewBox="0 0 300 300" fill="none">
+                    <rect width="300" height="300" fill="#0a2540"/>
+                    <text x="150" y="160" text-anchor="middle" fill="white" font-family="Poppins" font-size="18">Braces</text>
+                </svg>
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                    <span>Orthodontics</span>
+                </div>
+            </div>
+            <div class="gallery-item large">
+                <svg viewBox="0 0 600 300" fill="none">
+                    <rect width="600" height="300" fill="#00d4aa" opacity="0.3"/>
+                    <text x="300" y="150" text-anchor="middle" fill="#0a2540" font-family="Poppins" font-size="24">Our Modern Clinic</text>
+                </svg>
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                    <span>Clinic Tour</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact / Booking Section -->
+    <section class="testimonials">
+        <div class="section-header">
+            <span class="section-tag">Testimonials</span>
+            <h2 class="section-title">What Our <span class="gradient-text">Patients Say</span></h2>
+        </div>
+        <div class="testimonials-slider">
+            <div class="testimonial-track">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Absolutely incredible experience! The staff was so welcoming and Dr. Mitchell gave me the smile I've always dreamed of. Worth every penny!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <strong>Jessica Davis</strong>
+                            <span>Teeth Whitening Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"My kids actually enjoy going to the dentist now! Dr. Chen is amazing with children. The office is beautiful and so kid-friendly."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <strong>Maria Rodriguez</strong>
+                            <span>Pediatric Care Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Dr. Wilson's Invisalign treatment was painless and the results are amazing. I can't stop smiling! The whole team was professional and caring."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AK</div>
+                        <div class="author-info">
+                            <strong>Alex Kim</strong>
+                            <span>Invisalign Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Emergency toothache at midnight, and they got me in first thing in the morning. Painless root canal - I couldn't believe how easy it was!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <strong>Sam Mitchell</strong>
+                            <span>Emergency Care Patient</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-bg">
+            <div class="cta-blob"></div>
+        </div>
+        <div class="cta-content">
+            <h2>Ready to Transform Your Smile?</h2>
+            <p>Book your consultation today and take the first step towards the smile you've always wanted.</p>
+            <div class="cta-btns">
+                <a href="#booking" class="btn-white-solid">
+                    <i class="fas fa-calendar-check"></i>
+                    Book Appointment
+                </a>
+                <a href="tel:+1234567890" class="btn-outline-white">
+                    <i class="fas fa-phone"></i>
+                    Call Us Now
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="section-label">
-                        <span class="label-line"></span>
-                        <span class="label-text">Contact Us</span>
-                    </div>
-                    <h2 class="section-title">
-                        Get In <span class="highlight">Touch</span>
-                    </h2>
-                    <p class="contact-desc">
-                        Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
-                    </p>
-                    
-                    <div class="info-cards">
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="info-content">
-                                <h4>Visit Us</h4>
-                                <p>123 Dental Street, Healthcare District<br>City, State 12345</p>
-                            </div>
-                        </div>
-                        
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="info-content">
-                                <h4>Call Us</h4>
-                                <p>+1 (999) 999-9999</p>
-                                <span class="info-note">Mon-Sat: 8AM - 8PM</span>
-                            </div>
-                        </div>
-                        
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="info-content">
-                                <h4>Email Us</h4>
-                                <p>hello@premiumdental.com</p>
-                                <span class="info-note">We reply within 24 hours</span>
-                            </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <span class="section-tag">Contact Us</span>
+                <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="contact-desc">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-details">
+                            <h4>Visit Us</h4>
+                            <p>123 Dental Avenue, Healthcare District<br>New York, NY 10001</p>
                         </div>
                     </div>
-                    
-                    <div class="social-links">
-                        <h4>Follow Us</h4>
-                        <div class="social-icons">
-                            <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-details">
+                            <h4>Call Us</h4>
+                            <p>+1 (234) 567-890<br>Mon-Sat: 8AM - 8PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h4>Email Us</h4>
+                            <p>hello@dentalux.com<br>support@dentalux.com</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="contact-form-wrapper" id="booking">
-                    <div class="form-header">
-                        <h3>Book Your Appointment</h3>
-                        <p>Fill out the form below and we'll get back to you shortly.</p>
-                    </div>
-                    
-                    <form id="appointmentForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" placeholder="John Doe" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="john@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="service">Service Needed</label>
-                                <select id="service" name="service" required>
-                                    <option value="">Select a service</option>
-                                    <option value="consultation">General Consultation</option>
-                                    <option value="whitening">Teeth Whitening</option>
-                                    <option value="braces">Braces / Aligners</option>
-                                    <option value="implants">Dental Implants</option>
-                                    <option value="root-canal">Root Canal</option>
-                                    <option value="crowns">Crowns & Bridges</option>
-                                    <option value="cosmetic">Cosmetic Dentistry</option>
-                                    <option value="pediatric">Pediatric Dentistry</option>
-                                    <option value="emergency">Emergency Care</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="date">Preferred Date</label>
-                                <input type="date" id="date" name="date" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="time">Preferred Time</label>
-                                <select id="time" name="time" required>
-                                    <option value="">Select a time</option>
-                                    <option value="09:00">9:00 AM</option>
-                                    <option value="10:00">10:00 AM</option>
-                                    <option value="11:00">11:00 AM</option>
-                                    <option value="12:00">12:00 PM</option>
-                                    <option value="14:00">2:00 PM</option>
-                                    <option value="15:00">3:00 PM</option>
-                                    <option value="16:00">4:00 PM</option>
-                                    <option value="17:00">5:00 PM</option>
-                                    <option value="18:00">6:00 PM</option>
-                                    <option value="19:00">7:00 PM</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Additional Message (Optional)</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your dental concerns..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-block pulse-glow">
-                            <i class="fas fa-calendar-plus"></i>
-                            <span>Book Appointment</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="map">
-        <div class="map-grid">
-            <div class="map-info">
-                <h3>Find Us</h3>
-                <p>Conveniently located in the heart of the healthcare district with ample parking available.</p>
-                <div class="map-actions">
-                    <a href="https://maps.google.com" target="_blank" class="btn btn-primary btn-sm">
-                        <i class="fas fa-directions"></i>
-                        Get Directions
-                    </a>
-                </div>
-            </div>
-            <div class="map-embed">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2176767942287!2d-73.98823492404069!3d40.74844097138558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1703123456789!5m2!1sen!2sus"
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="footer-logo">
-                        <div class="logo-icon">
-                            <svg viewBox="0 0 50 50" fill="none">
-                                <circle cx="25" cy="25" r="22" fill="#0A2540" opacity="0.3"/>
-                                <path d="M25 10C18 10 12 18 12 25C12 32 18 40 25 40C32 40 38 32 38 25C38 18 32 10 25 10Z" fill="#E8F4FD"/>
-                                <path d="M25 15C20 15 16 21 16 25C16 29 20 35 25 35C30 35 34 29 34 25C34 21 30 15 25 15Z" fill="#00C9A7"/>
-                                <circle cx="25" cy="25" r="4" fill="#FFFFFF"/>
-                            </svg>
-                        </div>
-                        <div class="logo-text">
-                            <span class="logo-name">Premium Dental</span>
-                            <span class="logo-sub">Excellence in Care</span>
-                        </div>
-                    </a>
-                    <p>Transforming smiles since 1999. Your trusted partner for all dental care needs.</p>
-                    <div class="footer-badges">
-                        <span class="badge"><i class="fas fa-shield-alt"></i> HIPAA Compliant</span>
-                        <span class="badge"><i class="fas fa-certificate"></i> ISO Certified</span>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#team">Our Team</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">Teeth Whitening</a></li>
-                        <li><a href="#services">Dental Implants</a></li>
-                        <li><a href="#services">Braces & Aligners</a></li>
-                        <li><a href="#services">Root Canal</a></li>
-                        <li><a href="#services">Cosmetic Dentistry</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4>Contact Info</h4>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>123 Dental Street, City 12345</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+1 (999) 999-9999</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>hello@premiumdental.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <span>Mon-Sat: 8AM - 8PM</span>
-                    </div>
-                    
-                    <div class="newsletter">
-                        <h4>Newsletter</h4>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your email...">
-                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                        </form>
+                <div class="social-links">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2026 Premium Dental Clinic. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <div class="contact-form" id="booking">
+                <h3>Book Your Appointment</h3>
+                <form id="appointmentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+1 (234) 567-890" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Service</label>
+                            <select required>
+                                <option value="">Select Service</option>
+                                <option value="consultation">General Consultation</option>
+                                <option value="whitening">Teeth Whitening</option>
+                                <option value="invisalign">Invisalign / Braces</option>
+                                <option value="implants">Dental Implants</option>
+                                <option value="rootcanal">Root Canal</option>
+                                <option value="crowns">Crowns & Veneers</option>
+                                <option value="pediatric">Pediatric Dentistry</option>
+                                <option value="emergency">Emergency Care</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Preferred Date</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Time</label>
+                            <select required>
+                                <option value="">Select Time</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group full">
+                        <label>Message (Optional)</label>
+                        <textarea rows="4" placeholder="Tell us about your dental concerns..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-calendar-plus"></i>
+                        Book Appointment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">
+                    <div class="logo-icon"><i class="fas fa-tooth"></i></div>
+                    <div class="logo-text">
+                        <span class="logo-name">DentaLux</span>
+                        <span class="logo-tagline">Premium Dental Care</span>
+                    </div>
+                </a>
+                <p>Transforming smiles since 2010. Your trusted partner for all dental care needs with state-of-the-art facilities.</p>
+                <div class="footer-badges">
+                    <span><i class="fas fa-shield-alt"></i> HIPAA Compliant</span>
+                    <span><i class="fas fa-certificate"></i> ISO Certified</span>
                 </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#doctors">Our Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Teeth Whitening</a></li>
+                    <li><a href="#">Dental Implants</a></li>
+                    <li><a href="#">Invisalign</a></li>
+                    <li><a href="#">Root Canal</a></li>
+                    <li><a href="#">Emergency Care</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <div class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Dental Avenue, NY 10001</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 (234) 567-890</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>hello@dentalux.com</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Mon-Sat: 8AM - 8PM</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DentaLux. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Float Button -->
-    <div class="whatsapp-float">
-        <a href="https://wa.me/919999999999?text=Hi, I'd like to book an appointment" target="_blank" aria-label="Chat on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+    <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <!-- Lightbox Modal -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" id="lightboxClose">&times;</button>
-        <div class="lightbox-content" id="lightboxContent"></div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
